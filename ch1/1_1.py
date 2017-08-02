@@ -9,6 +9,12 @@ True
 >>> isUnique('asdfghajks')
 False
 
+>>> isUnique2('asdfghjkl')
+True
+
+>>> isUnique2('asdfghjkss')
+False
+
 """
 
 """ With datastructure Dictionary """
@@ -18,6 +24,15 @@ def isUnique(word):
 		if letter in word_dict:
 			return False
 		word_dict[letter] = True
+	return True
+
+""" Without datastructures """
+
+def isUnique2(word):
+	for letter1 in range(len(word)):
+		for letter2 in word[letter1+1:]:
+			if word[letter1] == letter2:
+				return False
 	return True
 
 
