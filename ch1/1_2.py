@@ -12,12 +12,19 @@ False
 
 def checkPremutation1(word1, word2):
 
+	if len(word1) != len(word2):
+		return False
+	
 	word1 = sorted(word1)
 	word2 = sorted(word2)
 
 	if word1 != word2:
 		return False
 	return True
+
+def checkPremutation2(word1, word2):
+
+
 
 
 if __name__ == '__main__':
