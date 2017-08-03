@@ -5,14 +5,15 @@ Is Unique: Implement an algorithm to determine if a string has all unique charac
 
 >>> isUnique('asdfghjkl')
 True
-
 >>> isUnique('asdfghajks')
 False
-
 >>> isUnique2('asdfghjkl')
 True
-
 >>> isUnique2('asdfghjkss')
+False
+>>> isUnique3('asdfghjkl')
+True
+>>> isUnique3('asdfghjkss')
 False
 
 """
@@ -26,6 +27,7 @@ def isUnique(word):
 		word_dict[letter] = True
 	return True
 
+
 """ Without datastructures """
 
 def isUnique2(word):
@@ -33,6 +35,14 @@ def isUnique2(word):
 		for letter2 in word[letter1+1:]:
 			if word[letter1] == letter2:
 				return False
+	return True
+
+""" Without datastructures """
+
+def isUnique3(word):
+	for letter in word:
+		if word.count(letter) > 1:
+			return False
 	return True
 
 
