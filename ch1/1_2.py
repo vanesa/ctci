@@ -11,6 +11,8 @@ False
 True
 >>> checkPremutation2('asdfghd', 'adsswwwwfdgh')
 False
+>>> checkPremutation2('', '')
+True
 
 """
 
