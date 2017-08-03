@@ -7,6 +7,7 @@ The palindrome does not need to be limited to just dictionary words.
 input: Tact Coa
 Output: True (premutation: "taco cat", "atco cta", etc.)
 """
+import unittest
 
 def isPalPerm(phrase):
 
@@ -21,3 +22,21 @@ def isPalPerm(phrase):
 		else:
 			return False
 	return True
+
+
+class Test(unittest.TestCase):
+	""" Test Cases """
+
+	data = [
+	('Tact Coa', True), ('dfdfrgghh', True), 
+	('A man a plan a Canal panama', True), 
+	('dfd frg gihh', False)
+	]
+
+	def test_isPalPerm(self):
+		for [test_string, expected] in self.data:
+			actual = isPalPerm(test_string)
+			self.assertEqual(actual, expected)
+
+if __name__ == '__main__':
+	unittest.main()
