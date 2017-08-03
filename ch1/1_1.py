@@ -15,6 +15,10 @@ False
 True
 >>> isUnique3('asdfghjkss')
 False
+>>> isUnique4('asdfghjkl')
+True
+>>> isUnique4('asdfghjkss')
+False
 
 """
 
@@ -27,6 +31,10 @@ def isUnique(word):
 		word_dict[letter] = True
 	return True
 
+def isUnique4(word):
+	if len(word) != len(set(word)):
+		return False
+	return True
 
 """ Without datastructures """
 
